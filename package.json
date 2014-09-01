@@ -33,7 +33,12 @@
     "request",
     "scrape",
     "website",
-    "pagination"
+    "pagination",
+    "css",
+    "selector",
+    "cheerio",
+    "q",
+    "curlrequest"
   ],
   "engine": "node >= 0.4.1"
 }
