@@ -17,10 +17,7 @@ var config = {
             selector:"p",
             extract:"html"
         }
-    },
-    paginationParameter:"",
-    paginationIncrement:16,
-    dynamicScraper:false
+    }
 };
 
 cheers.scrape(config).then(function(results){
