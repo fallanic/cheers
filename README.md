@@ -14,7 +14,7 @@ https://github.com/cheeriojs/cheerio<br>
 https://github.com/chriso/curlrequest<br>
 https://github.com/kriskowal/q<br>
 
-### Css mapping syntax inspired by :
+### CSS mapping syntax inspired by :
 
 https://github.com/dharmafly/noodle
 
@@ -36,27 +36,27 @@ var cheers = require('cheers');
 
 //let's scrape this excellent JS news website
 var config = {
-    url:"http://www.echojs.com/",
-    blockSelector:"article",
-    scrape:{
-        title:{
-            selector:"h2 a",
-            extract:"text"
+    url: "http://www.echojs.com/",
+    blockSelector: "article",
+    scrape: {
+        title: {
+            selector: "h2 a",
+            extract: "text"
         },
-        link:{
-            selector:"h2 a",
-            extract:"href"
+        link: {
+            selector: "h2 a",
+            extract: "href"
         },
-        linkHtml:{
-            selector:"p",
-            extract:"html"
+        linkHtml: {
+            selector: "p",
+            extract: "html"
         }
     }
 };
 
-cheers.scrape(config).then(function(results){
+cheers.scrape(config).then(function (results) {
     console.log(JSON.stringify(results));
-}).catch(function(error){
+}).catch(function (error) {
     console.error(error);
 });
 </pre>
