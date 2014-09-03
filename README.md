@@ -47,9 +47,13 @@ var config = {
             selector: "h2 a",
             extract: "href"
         },
-        linkHtml: {
-            selector: "p",
+        articleInnerHtml: {
+            selector: ".",
             extract: "html"
+        },
+        articleOuterHtml: {
+            selector: ".",
+            extract: "outerHTML"
         }
     }
 };
