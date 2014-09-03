@@ -28,7 +28,7 @@ Configuration options:
 
 - `config.url` : the URL to scrape
 - `config.blockSelector` : the CSS selector to apply on the page to divide it in scraping blocks. This field is optional (will use "body" by default)
-- `config.scrape` : the definition of what you want to extract in each block. Each key has two *mandatory* attributes : `selector` (a CSS selector) and `extract`. The possible values for `extract` are *text*, *html* or the name of an attribute on the html element (e.g. "href").
+- `config.scrape` : the definition of what you want to extract in each block. Each key has two *mandatory* attributes : `selector` (a CSS selector or `.` to stay on the current node) and `extract`. The possible values for `extract` are *text*, *html*, *outerHTML* or the name of an attribute on the html element (e.g. "href").
 
 
 <pre>
@@ -65,7 +65,7 @@ cheers.scrape(config).then(function (results) {
 
 - website pagination
 - option to use a headless browser
-- option to use request instead of curl?
+- unit tests
 
 That's all folks!
 
