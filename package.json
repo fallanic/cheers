@@ -1,7 +1,7 @@
 {
   "name": "cheers",
   "version": "0.2.0",
-  "description": "Scrape a website efficiently, block by block, page by page. Based on cheerio and curl.",
+  "description": "Scrape a website efficiently, block by block, page by page. Based on cheerio and cURL.",
   "author": {
     "name": "Fabien Allanic",
     "email": "fabien.allanic@gmail.com"
