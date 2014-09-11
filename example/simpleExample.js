@@ -20,6 +20,10 @@ var config = {
         articleOuterHtml: {
             selector: ".",
             extract: "outerHTML"
+        },
+        articlePublishedTime: {
+            selector: 'p',
+            extract: /\d* (?:hour[s]?|day[s]?) ago/
         }
     }
 };
