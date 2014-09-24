@@ -71,6 +71,7 @@ cheers.scrape(config).then(function (results) {
 
 ## Roadmap
 
+- Option to use request instead of curl
 - Website pagination
 - Option to use a headless browser
 - Unit tests
