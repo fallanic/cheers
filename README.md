@@ -78,6 +78,12 @@ cheers.scrape(config).then(function (results) {
 - Option to use a headless browser
 - Unit tests
 
+## Contributors
+
+- https://github.com/fallanic
+- https://github.com/arsalan-k
+- https://github.com/kchapelier
+
 Cheers!
 
 # License
