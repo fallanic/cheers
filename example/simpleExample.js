@@ -2,7 +2,10 @@ var cheers = require('../lib/cheers.js');
 
 //let's scrape this excellent JS news website
 var config = {
-    url: "http://www.echojs.com/",
+    url: "http://www.echojs.com/",    
+    curlOptions: {
+        'useragent': 'Cheers'
+    },
     blockSelector: "article",
     scrape: {
         title: {
