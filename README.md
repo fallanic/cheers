@@ -87,6 +87,7 @@ cheers.scrape(config).then(function (results) {
 - https://github.com/fallanic
 - https://github.com/arsalan-k
 - https://github.com/kchapelier
+- https://github.com/ptsakyrellis
 
 Cheers!
 
