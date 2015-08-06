@@ -76,7 +76,7 @@ cheers.scrape(config).then(function (results) {
 ## Roadmap
 
 - Option to use request instead of curl
-~~- Option to change the user agent~~
+- ~~Option to change the user agent~~
 - Command line tool
 - Website pagination
 - Option to use a headless browser
