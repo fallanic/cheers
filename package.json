@@ -9,7 +9,10 @@
   "dependencies": {
     "q":"2.0.x",
     "cheerio":"0.17.0",
-    "curlrequest":"0.5.x"
+    "curlrequest":"0.5.x",
+    "mocha": "2.2.x",
+    "chai":  "2.1.x",
+    "chai-as-promised": "5.1.x"
   },
   "repository": {
     "type": "git",
@@ -41,5 +44,9 @@
     "curlrequest",
     "regexp"
   ],
-  "engine": "node >= 0.4.1"
+  "engine": "node >= 0.4.1",
+  "scripts":
+  {
+   "test": "node_modules/.bin/mocha -w"
+  }
 }
