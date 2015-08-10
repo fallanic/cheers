@@ -66,8 +66,11 @@ describe('Types of config error - bad scrapper (missing selector)', function() {
 
 // Testing scrapping returned data - using echo.js for the moment
 
+var server = require('./server.js');
+
+
 var resultConfig = {
-    url: "http://www.echojs.com/",    
+    url: "http://localhost:3000/echojs.html",
     blockSelector: "head",
     scrape: {
         title: {
@@ -86,7 +89,7 @@ describe('Scrapping result test - title of a page', function() {
 
 
 var resultConfig2 = {
-    url: "http://www.echojs.com/",    
+    url: "http://localhost:3000/echojs.html",
     blockSelector: "article",
     scrape: {
         articleLink: {
@@ -102,7 +105,3 @@ describe('Scrapping result test - article link ', function() {
                       not.be.empty.and.should.eventually.have.lengthOf(30);
     });
 });
-
-
-
-
