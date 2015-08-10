@@ -24,40 +24,43 @@ var wellFormedConfig = {
 
 // Let the tests begin (config)
 
-describe('Correct config parsing', function() {
-    it('should scrap without error', function() {
-      	return cheers.scrape(wellFormedConfig).should.be.fulfilled;
-    });
-});
+describe('Configurations test', function(){
 
-describe('Incorrect config parsing', function() {
-    it('should return error', function() {
-      	return cheers.scrape(noUrlConfig).should.be.rejected;
+    describe('Correct config parsing', function() {
+        it('should scrap without error', function() {
+            return cheers.scrape(wellFormedConfig).should.be.fulfilled;
+        });
     });
-});
 
-describe('Types of config error - url', function() {
-    it('should return with url error', function() {
-      	return cheers.scrape(noUrlConfig).should.be.rejectedWith("Incorrect config, missing 'url'");
+    describe('Incorrect config parsing', function() {
+        it('should return error', function() {
+            return cheers.scrape(noUrlConfig).should.be.rejected;
+        });
     });
-});
 
-describe('Types of config error - bad scrapper (missing extract)', function() {
-    it('should return with bad scrapper error', function() {
-      	return cheers.scrape(badScrapperConfig).should.be.rejectedWith("Incorrect scraper mapping, each item must have a 'selector' and an 'extract' attribute.\n");
+    describe('Types of config error - url', function() {
+        it('should return with url error', function() {
+            return cheers.scrape(noUrlConfig).should.be.rejectedWith("Incorrect config, missing 'url'");
+        });
     });
-});
 
-describe('Types of config error - bad scrapper (missing selector)', function() {
-    it('should return with bad scrapper error', function() {
-      	return cheers.scrape(badScrapperConfig).should.be.rejectedWith("Incorrect scraper mapping, each item must have a 'selector' and an 'extract' attribute.\n");
+    describe('Types of config error - bad scrapper (missing extract)', function() {
+        it('should return with bad scrapper error', function() {
+            return cheers.scrape(badScrapperConfig).should.be.rejectedWith("Incorrect scraper mapping, each item must have a 'selector' and an 'extract' attribute.\n");
+        });
     });
-});
 
+    describe('Types of config error - bad scrapper (missing selector)', function() {
+        it('should return with bad scrapper error', function() {
+            return cheers.scrape(badScrapperConfig).should.be.rejectedWith("Incorrect scraper mapping, each item must have a 'selector' and an 'extract' attribute.\n");
+        });
+    });
+
+});
 
 // Testing scrapping returned data
 
-describe('test server', function () {
+describe('cheers returned data', function () {
     var server;
 
     before(function () {
