@@ -1,38 +1,28 @@
-var chai = require('chai');
-var should = chai.should();
-var chaiAsPromised = require('chai-as-promised');
-chai.use(chaiAsPromised);
+// Test requirements
 
-var cheers = require('../lib/cheers.js')
+var chai = require('chai'),should = chai.should(), chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised), cheers = require('../lib/cheers.js'), app = require('./app.js');
+
+// Declaring our different configs to test
 
 var wellFormedConfig = {
-    url: "http://www.echojs.com",    
-    blockSelector: "article",
-    scrape: { title: { selector: "h2 a", extract: "text" } }
-};
+        url: "http://localhost:3000/echojs.html",
+        blockSelector: "article",
+        scrape: { title: { selector: "h2 a", extract: "text" } }
+    },
 
-var noUrlConfig = {
-    blockSelector: "article",
-    scrape: { title: { selector: "h2 a", extract: "text" } }
-};
+    noUrlConfig = {
+        blockSelector: "article",
+        scrape: { title: { selector: "h2 a", extract: "text" } }
+    },
 
-var badScrapperConfig = {
-	url: "http://www.echojs.com",
-    blockSelector: "article",
-    scrape: { title: { selector: "h2 a" } }
-};
+    badScrapperConfig = {
+	    url: "http://localhost:3000/echojs.html",
+        blockSelector: "article",
+        scrape: { title: {  extract: "text" } }
+    };
 
-var badScrapperConfig = {
-	url: "http://www.echojs.com",
-    blockSelector: "article",
-    scrape: { title: {  extract: "text" } }
-};
-
-var missingBlockSelectorConfig = {
-	url: "http://www.echojs.com",
-    scrape: { title: { selector: "h2 a" } }
-};
- 
+// Let the tests begin (config)
 
 describe('Correct config parsing', function() {
     it('should scrap without error', function() {
@@ -64,44 +54,53 @@ describe('Types of config error - bad scrapper (missing selector)', function() {
     });
 });
 
-// Testing scrapping returned data - using echo.js for the moment
 
-var server = require('./server.js');
+// Testing scrapping returned data
 
+describe('test server', function () {
+    var server;
 
-var resultConfig = {
-    url: "http://localhost:3000/echojs.html",
-    blockSelector: "head",
-    scrape: {
-        title: {
-            selector: "title",
-            extract: "text"
-        }
-    }
-};
-
-describe('Scrapping result test - title of a page', function() {
-    it('should return the title of the echo js frontpage', function() {
-        return cheers.scrape(resultConfig).should.eventually.
-                      deep.equal(Array({"title": "\nEcho JS - JavaScript News\n"}));
+    before(function () {
+        server = app.listen(3000, function () {});
     });
-});
 
-
-var resultConfig2 = {
-    url: "http://localhost:3000/echojs.html",
-    blockSelector: "article",
-    scrape: {
-        articleLink: {
-            selector: "h2 b",
-            extract: "text"
+    var resultConfig = {
+        url: "http://localhost:3000/echojs.html",
+        blockSelector: "head",
+        scrape: {
+            title: {
+                selector: "title",
+                extract: "text"
+            }
         }
-    }
-};
+    };
 
-describe('Scrapping result test - article link ', function() {
-    it('should return an array of results', function() {
-        return cheers.scrape(resultConfig2).should.eventually.
-                      not.be.empty.and.should.eventually.have.lengthOf(30);
+    describe('Scrapping result test - title of a page', function() {
+        it('should return the title of the echojs frontpage', function() {
+            return cheers.scrape(resultConfig).should.eventually.
+                deep.equal(Array({"title": "\nEcho JS - JavaScript News\n"}));
+        });
+    });
+
+    var resultConfig2 = {
+        url: "http://localhost:3000/echojs.html",
+        blockSelector: "article",
+        scrape: {
+            articleLink: {
+                selector: "h2 b",
+                extract: "text"
+            }
+        }
+    };
+
+    describe('Scrapping result test - article link ', function() {
+        it('should return an array of 30 results', function() {
+            return cheers.scrape(resultConfig2).should.eventually.
+                not.be.empty.and.should.eventually.have.lengthOf(30);
+        });
+    });
+
+    after(function () {
+        server.close();
     });
 });
