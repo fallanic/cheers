@@ -73,6 +73,12 @@ cheers.scrape(config).then(function (results) {
 });
 </pre>
 
+## Unit tests
+
+Tests can be run by typing the command `npm test`
+
+If you don't want to use the test dependencies, please use `npm install --production` when installing.
+
 ## Roadmap
 
 - Option to use request instead of curl
@@ -80,7 +86,7 @@ cheers.scrape(config).then(function (results) {
 - Command line tool
 - Website pagination
 - Option to use a headless browser
-- Unit tests
+- ~~Unit tests~~
 
 ## Contributors
 
