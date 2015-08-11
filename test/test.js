@@ -44,12 +44,6 @@ describe('Configurations test', function(){
         });
     });
 
-    describe('Types of config error - bad scrapper (missing extract)', function() {
-        it('should return with bad scrapper error', function() {
-            return cheers.scrape(badScrapperConfig).should.be.rejectedWith("Incorrect scraper mapping, each item must have a 'selector' and an 'extract' attribute.\n");
-        });
-    });
-
     describe('Types of config error - bad scrapper (missing selector)', function() {
         it('should return with bad scrapper error', function() {
             return cheers.scrape(badScrapperConfig).should.be.rejectedWith("Incorrect scraper mapping, each item must have a 'selector' and an 'extract' attribute.\n");
@@ -67,7 +61,7 @@ describe('cheers returned data', function () {
         server = app.listen(3000, function () {});
     });
 
-    var resultConfig = {
+    var configForTitle = {
         url: "http://localhost:3000/echojs.html",
         blockSelector: "head",
         scrape: {
@@ -80,12 +74,12 @@ describe('cheers returned data', function () {
 
     describe('Scrapping result test - title of a page', function() {
         it('should return the title of the echojs frontpage', function() {
-            return cheers.scrape(resultConfig).should.eventually.
+            return cheers.scrape(configForTitle).should.eventually.
                 deep.equal(Array({"title": "\nEcho JS - JavaScript News\n"}));
         });
     });
 
-    var resultConfig2 = {
+    var configForArticles = {
         url: "http://localhost:3000/echojs.html",
         blockSelector: "article",
         scrape: {
@@ -98,7 +92,7 @@ describe('cheers returned data', function () {
 
     describe('Scrapping result test - article link ', function() {
         it('should return an array of 30 results', function() {
-            return cheers.scrape(resultConfig2).should.eventually.
+            return cheers.scrape(configForArticles).should.eventually.
                 not.be.empty.and.should.eventually.have.lengthOf(30);
         });
     });
