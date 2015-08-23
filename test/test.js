@@ -3,6 +3,7 @@
 var chai = require('chai'),should = chai.should(), chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised), cheers = require('../lib/cheers.js'), app = require('./app.js');
 
+
 // Declaring our different configs to test
 
 var wellFormedConfig = {
