@@ -20,7 +20,7 @@ else
    process.exit();
 }
 
-// For some reason the Regexp string of the config files
+// For some reason the Regexp string of the config file
 // has trouble being seen as a RegExp object
 for(var key in config.scrape){
     var mapping = config.scrape[key];
