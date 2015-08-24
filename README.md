@@ -73,6 +73,53 @@ cheers.scrape(config).then(function (results) {
 });
 </pre>
 
+## Shell script
+
+Instead of using cheers with javascript, you can also use the provided shell script that encapsulates the library.
+To install the shell script globally on your system, please run the command `node install cheers --gloabl`
+
+You'll then be able to use cheers command.
+
+Cheers will scrape the content according to a config file similar to what is described in the above documentation, except
+it will take the form of a JSON file.
+
+Example of config file (same config as above) :
+
+config.json :
+<pre>
+{
+    "url": "http://www.echojs.com/",
+    "blockSelector": "article",
+    "scrape": {
+        "title": {
+            "selector": "h2 a",
+            "extract": "text"
+        },
+        "link": {
+            "selector": "h2 a",
+            "extract": "href"
+        },
+        "articleInnerHtml": {
+            "selector": ".",
+            "extract": "html"
+        },
+        "articleOuterHtml": {
+            "selector": ".",
+            "extract": "outerHTML"
+        },
+        "articlePublishedTime": {
+            "selector": "p",
+            "extract": "/\\d* (?:hour[s]?|day[s]?) ago/"
+        }
+    }
+}
+
+## Unit tests
+
+Tests can be run by typing the command `npm test`
+
+If you don't want to use the test dependencies, please use `npm install --production` when installing.
+
 ## Roadmap
 
 - Option to use request instead of curl
@@ -80,7 +127,7 @@ cheers.scrape(config).then(function (results) {
 - Command line tool
 - Website pagination
 - Option to use a headless browser
-- Unit tests
+- ~~Unit tests~~
 
 ## Contributors
 
