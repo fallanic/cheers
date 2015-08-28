@@ -85,7 +85,7 @@ describe('cheers returned data', function () {
         blockSelector: "article",
         scrape: {
             articleLink: {
-                selector: "h2 b",
+                selector: "h2",
                 extract: "text"
             }
         }
