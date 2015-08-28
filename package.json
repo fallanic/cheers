@@ -51,5 +51,8 @@
   "scripts":
   {
    "test": "node_modules/.bin/mocha -w"
+  },
+  "bin": {
+    "cheers": "lib/shell/cheers-cli.js"
   }
 }
