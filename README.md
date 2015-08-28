@@ -76,14 +76,15 @@ cheers.scrape(config).then(function (results) {
 ## Shell script
 
 Instead of using cheers with javascript, you can also use the provided shell script that encapsulates the library.
-To install the shell script globally on your system, please run the command `node install cheers --gloabl`
+To install the shell script globally on your system, please run the command
+`npm install cheers -g` or `npm install cheers --global`
 
-You'll then be able to use cheers command.
+You'll then be able to use cheers command from a terminal.
 
 Cheers will scrape the content according to a config file similar to what is described in the above documentation, except
 it will take the form of a JSON file.
 
-Example of config file (same config as above) :
+####Example of config file (same config as above) :
 
 config.json :
 <pre>
@@ -113,6 +114,13 @@ config.json :
         }
     }
 }
+</pre>
+
+The main difference is found when you want to use a regular expression, you have to escape the \ to respect the JSON format.
+
+####Usage example :
+
+`cheers -conf /directory/config.json`
 
 ## Unit tests
 
