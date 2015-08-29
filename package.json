@@ -50,7 +50,7 @@
   "engine": "node >= 0.4.1",
   "scripts":
   {
-   "test": "node_modules/.bin/mocha -w"
+   "test": "node_modules/.bin/mocha"
   },
   "bin": {
     "cheers": "lib/shell/cheers-cli.js"

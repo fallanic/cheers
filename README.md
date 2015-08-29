@@ -116,7 +116,7 @@ config.json :
 }
 </pre>
 
-The main difference is found when you want to use a regular expression, you have to escape the \ to respect the JSON format.
+The main difference is found when you want to use a regular expression, you have to escape all the \ to respect the JSON format.
 
 ####Usage example :
 
