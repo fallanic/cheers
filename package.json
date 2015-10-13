@@ -1,6 +1,6 @@
 {
   "name": "cheers",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Scrape a website efficiently, block by block, page by page. Based on cheerio and cURL.",
   "author": {
     "name": "Fabien Allanic",
@@ -29,7 +29,7 @@
       "type": "MIT",
       "url": "https://github.com/fallanic/cheers/blob/master/MIT-LICENSE.md"
     }
-  ],  
+  ],
   "main": "lib/cheers",
   "keywords": [
     "scraper",
