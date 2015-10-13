@@ -1,7 +1,5 @@
 var cheers = require('../lib/cheers.js');
 
-//TODO these should be unit tests
-
 //let's scrape this excellent JS news website
 var config = {
     url: "http://www.echojs.com/",
