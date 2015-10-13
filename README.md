@@ -8,7 +8,7 @@ Scrape a website efficiently, block by block, page by page.
 This is a Cheerio based scraper, useful to extract data from a website using CSS selectors.<br>
 The motivation behind this package is to provide a simple cheerio-based scraping tool, able to divide a website into blocks, and transform each block into a JSON object using CSS selectors.
 
-### Built on top of the excellents :
+### Built on top of these excellent modules :
 
 https://github.com/cheeriojs/cheerio<br>
 https://github.com/chriso/curlrequest<br>
@@ -130,12 +130,14 @@ If you don't want to use the test dependencies, please use `npm install --produc
 
 ## Roadmap
 
-- Option to use request instead of curl
 - ~~Option to change the user agent~~
-- Command line tool
-- Website pagination
-- Option to use a headless browser
+- ~~Command line tool~~
 - ~~Unit tests~~
+- Array of URLs
+- Start from sitemap
+- Website pagination
+- Option to use request instead of curl
+- Option to use a headless browser
 
 ## Contributors
 
