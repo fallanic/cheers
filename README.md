@@ -133,7 +133,7 @@ If you don't want to use the test dependencies, please use `npm install --produc
 - ~~Option to change the user agent~~
 - ~~Command line tool~~
 - ~~Unit tests~~
-- Array of URLs
+- ~~Array of URLs~~
 - Start from sitemap
 - Website pagination
 - Option to use request instead of curl
