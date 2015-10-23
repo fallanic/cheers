@@ -26,6 +26,9 @@ var wellFormedConfig = {
 // Let the tests begin (config)
 
 describe('Configurations test', function(){
+    before(function () {
+        server = app.listen(3000, function () {});
+    });
 
     describe('Correct config parsing', function() {
         it('should scrap without error', function() {
@@ -51,6 +54,9 @@ describe('Configurations test', function(){
         });
     });
 
+    after(function () {
+        server.close();
+    });
 });
 
 // Testing scrapping returned data
@@ -97,6 +103,36 @@ describe('cheers returned data', function () {
                 not.be.empty.and.should.eventually.have.lengthOf(30);
         });
     });
+
+    after(function () {
+        server.close();
+    });
+});
+
+// Testing scrapping multiple pages
+
+describe('cheers returned data from multiple pages', function () {
+    var server;
+
+    before(function () {
+        server = app.listen(3000, function () {});
+    });
+
+    var configForTitle = {
+        url: ["http://localhost:3000/echojs.html","http://localhost:3000/echojs2.html"],
+        scrape: {
+            sitenews: {
+                selector: "#sitenews",
+                extract: "text"
+            }
+        }
+    };
+
+    it('should return an array of results', function() {
+        return cheers.scrape(configForTitle).should.eventually.
+            deep.equal([[{"sitenews": "\nSite News : Follow Echo JS on Twitter, our official account is : @echojs\n"}],[{"sitenews":"\nReactive2015 - React conference in Bratislava, Slovakia (2-4th November 2015)\n"}]]);
+    });
+
 
     after(function () {
         server.close();

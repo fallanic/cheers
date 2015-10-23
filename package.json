@@ -9,7 +9,8 @@
   "dependencies": {
     "q":"2.0.x",
     "cheerio":"0.17.0",
-    "curlrequest":"0.5.x"
+    "curlrequest":"0.5.x",
+    "node-squad":"0.3.x"
   },
   "devDependencies": {
     "mocha": "2.2.x",
