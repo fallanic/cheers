@@ -138,3 +138,31 @@ describe('cheers returned data from multiple pages', function () {
         server.close();
     });
 });
+
+describe('cheers is able to scrape multiple pages from a sitemap', function () {
+    var server;
+
+    before(function () {
+        server = app.listen(3000, function () {});
+    });
+
+    var configForTitle = {
+        url: "http://localhost:3000/sitemap.xml",
+        scrape: {
+            sitenews: {
+                selector: "#sitenews",
+                extract: "text"
+            }
+        }
+    };
+
+    it('should return an array of results', function() {
+        return cheers.scrape(configForTitle).should.eventually.
+            deep.equal([[{"sitenews": "\nSite News : Follow Echo JS on Twitter, our official account is : @echojs\n"}],[{"sitenews":"\nReactive2015 - React conference in Bratislava, Slovakia (2-4th November 2015)\n"}]]);
+    });
+
+
+    after(function () {
+        server.close();
+    });
+});
