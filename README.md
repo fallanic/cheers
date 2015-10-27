@@ -134,7 +134,7 @@ If you don't want to use the test dependencies, please use `npm install --produc
 - ~~Command line tool~~
 - ~~Unit tests~~
 - ~~Array of URLs~~
-- Start from sitemap
+- ~~Start from sitemap~~
 - Website pagination
 - Option to use request instead of curl
 - Option to use a headless browser
