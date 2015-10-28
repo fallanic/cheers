@@ -32,6 +32,7 @@ Configuration options:
 - `config.curlOptions` : additionnal options you want to pass to curl. See the documentation from https://github.com/chriso/curlrequest for more information.
 - `config.curlOptions` : additionnal options you want to pass to curl. See the documentation from https://github.com/chriso/curlrequest for more information.
 - `config.blacklist` : an array of URL to ignore (for sitemap scraping).
+- `config.verbose` : show more logs when scraping (for debugging purpose).
 
 <pre>
 var cheers = require('cheers');
