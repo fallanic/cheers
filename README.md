@@ -26,11 +26,12 @@ Install the module with: `npm install cheers`
 
 Configuration options:
 
-- `config.url` : the URL to scrape
+- `config.url` : the URL to scrape (single URL, or array of URLs, or sitemap.xml)
 - `config.blockSelector` : the CSS selector to apply on the page to divide it in scraping blocks. This field is optional (will use "body" by default)
 - `config.scrape` : the definition of what you want to extract in each block. Each key has two *mandatory* attributes : `selector` (a CSS selector or `.` to stay on the current node) and `extract`. The possible values for `extract` are **text**, **html**, **outerHTML**, <b>a RegExp</b> or the <b>name of an attribute</b> of the html element (e.g. "href")
 - `config.curlOptions` : additionnal options you want to pass to curl. See the documentation from https://github.com/chriso/curlrequest for more information.
-
+- `config.curlOptions` : additionnal options you want to pass to curl. See the documentation from https://github.com/chriso/curlrequest for more information.
+- `config.blacklist` : an array of URL to ignore (for sitemap scraping).
 
 <pre>
 var cheers = require('cheers');
