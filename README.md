@@ -86,7 +86,7 @@ You'll then be able to use cheers command from a terminal.
 Cheers will scrape the content according to a config file similar to what is described in the above documentation, except
 it will take the form of a JSON file.
 
-####Example of config file (same config as above) :
+#### Example of config file (same config as above) :
 
 config.json :
 <pre>
@@ -120,7 +120,7 @@ config.json :
 
 The main difference is found when you want to use a regular expression, you have to escape all the \ to respect the JSON format.
 
-####Usage example :
+#### Usage example :
 
 `cheers -conf /directory/config.json`
 
